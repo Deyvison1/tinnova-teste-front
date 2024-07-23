@@ -1,0 +1,31 @@
+<div>
+  <form [formGroup]="form">
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Marca</mat-label>
+            <input matInput formControlName="brand" placeholder="Ex. Ford" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Ano</mat-label>
+            <input matInput formControlName="year" placeholder="Ex. 2021" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Cor</mat-label>
+            <input matInput formControlName="color" placeholder="Ex. Prata" />
+          </mat-form-field>
+        </td>
+        <td>
+          <button class="btn btn-success" (click)="filter()">
+            <mat-icon fontIcon="search"></mat-icon>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

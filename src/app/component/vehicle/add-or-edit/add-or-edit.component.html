@@ -1,0 +1,71 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-2">
+        <input type="number" hidden formControlName="id" />
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Veiculo</mat-label>
+          <input
+            [readonly]="isDetail"
+            matInput
+            formControlName="vehicle"
+            placeholder="Ex. Uno"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-2">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Marca</mat-label>
+          <mat-select formControlName="brand" [compareWith]="compareObjects">
+            <mat-option
+              *ngFor="let brand of brands"
+              [value]="brand"
+              [disabled]="isDetail"
+            >
+              {{ brand }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-2">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Ano</mat-label>
+          <input
+            matInput
+            [readonly]="isDetail"
+            type="number"
+            formControlName="year"
+            placeholder="Ex. 2008"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-2">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Descrição</mat-label>
+          <input
+            [readonly]="isDetail"
+            matInput
+            formControlName="description"
+            placeholder="Ex. Sedan"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-2">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Cor</mat-label>
+          <input
+            [readonly]="isDetail"
+            matInput
+            formControlName="color"
+            placeholder="Ex. Azul"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col" style="margin-top: 10px" *ngIf="!isDetail">
+        <button class="btn btn-success" (click)="save()">
+          <mat-icon fontIcon="add"></mat-icon>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
