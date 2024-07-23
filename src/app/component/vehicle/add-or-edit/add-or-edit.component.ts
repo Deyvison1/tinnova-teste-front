@@ -12,7 +12,7 @@ export class AddOrEditComponent implements OnInit {
   form: FormGroup;
   isAdd: boolean;
   isDetail: boolean = false;
-  brands: string[]  = ['Fiat', 'Ford', 'Renault'];
+  brands: string[]  = ['Fiat', 'Ford', 'Renault', 'chevrolet', 'Citroen', 'Hyundai', 'Volkswagen', 'Nissan', 'Mitsubishi'];
 
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private service: VehicleService, private router: Router) {
 
